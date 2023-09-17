@@ -2,6 +2,9 @@
   height: 50px;
   width: 100%;
   position: fixed;
+  top: 0;
+  left: 0;
+  position: relative;
 }
 
 .nav {
@@ -12,8 +15,11 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.mobile_menu{
+  display: none;
+}
 .nav__menu {
+  
   display: flex;
   align-items: center;
   list-style: none;
@@ -27,14 +33,52 @@
 .login-btn,
 .regis-btn {
   width: 70px;
-  height: 25px;
-
-  border-radius: 5px;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 2px;
   outline: none;
   border: none;
   cursor: pointer;
+  color: white;
+  background-color: blueviolet;
 }
 
 .logo {
   font-size: 25px;
+}
+
+
+@media screen and (max-width:550px){
+  .nav__menu {
+    display: none;
+  }
+
+  .active{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    left: 0;
+    padding: 20px;
+    background-color: rgb(233, 230, 230);
+    animation: menuSlide 0.5s ease;
+  
+  }
+
+  .mobile_menu{
+    display:block;
+  }
+
+  .navbar {
+    padding: 20px;
+  }
+
+ 
+}
+
+
+@keyframes menuSlide{
+  0% {left: 100%;}
+  100% {left: 0;}
 }

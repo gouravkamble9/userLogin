@@ -16,7 +16,7 @@ const App = () => {
       }}
     >
       <AppContextProvider>
-        <Navbar />
+        <Navbar/>
         <Home/>
       </AppContextProvider>
     </Auth0Provider>

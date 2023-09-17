@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export const Context=createContext();
@@ -7,7 +7,7 @@ export const Context=createContext();
 const AppContextProvider=({children})=>{
     
     const { user, isAuthenticated, isLoading ,logout,loginWithRedirect} = useAuth0();
-
+    const [mobileMenu,SetMobileMenu]=useState(false)
 
     return(
         <Context.Provider 
@@ -17,6 +17,8 @@ const AppContextProvider=({children})=>{
         isLoading,
         logout,
         loginWithRedirect,
+        mobileMenu,
+        SetMobileMenu,
         
         }
         }
