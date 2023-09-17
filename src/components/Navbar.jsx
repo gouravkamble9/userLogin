@@ -23,7 +23,7 @@ const Navbar = () => {
         {mobileMenu ? <AiOutlineClose size={20} onClick={()=>SetMobileMenu(!mobileMenu)}/> :<GiHamburgerMenu size={20} className="mobile_menu" onClick={()=>SetMobileMenu(!mobileMenu)}/>}
         
         
-        <ul className={`nav__menu ${mobileMenu ? "active" : ""}`}>
+        <ul className={`nav__menu ${mobileMenu ? "active" : ""}`} onClick={()=>SetMobileMenu(!mobileMenu)}>
           <li>HOME</li>
           <li>MENU</li>
           <li>ORDER</li>
@@ -31,11 +31,9 @@ const Navbar = () => {
           <li>CONTACT US</li>
           <li>{isAuthenticated && <p>{user.name}</p>}</li>
           {
-            isAuthenticated ? <li><button className='regis-btn' onClick={() => {logout({ logoutParams: { returnTo: window.location.origin } })
-            SetMobileMenu(!mobileMenu)}}>LOG OUT</button></li>
+            isAuthenticated ? <li><button className='regis-btn' onClick={() => {logout({ logoutParams: { returnTo: window.location.origin } })}}>LOG OUT</button></li>
             :(
-                <li> <button className="login-btn" onClick={()=>{loginWithRedirect() 
-                  SetMobileMenu(!mobileMenu)}}>LOG IN</button></li>
+                <li> <button className="login-btn" onClick={()=>{loginWithRedirect()}}>LOG IN</button></li>
             )
           }
             
